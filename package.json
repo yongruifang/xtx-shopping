@@ -16,6 +16,7 @@
     "vue-router": "^4.2.0"
   },
   "devDependencies": {
+    "@iconify-json/carbon": "^1.1.17",
     "@unocss/preset-attributify": "^0.52.7",
     "@unocss/preset-icons": "^0.52.7",
     "@unocss/preset-uno": "^0.52.7",
