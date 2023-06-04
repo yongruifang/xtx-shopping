@@ -9,6 +9,9 @@ import router from './router'
 // 引入初始化样式文件
 import '@/styles/common.scss'
 
+// 引入Uno.css
+import 'uno.css'
+
 //测试接口函数
 import {getCategory } from '@/apis/testAPI'
 getCategory().then(res=>{
