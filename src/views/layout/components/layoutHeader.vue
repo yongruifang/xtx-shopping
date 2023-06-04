@@ -20,8 +20,8 @@
                     <RouterLink to="/">服饰</RouterLink>
                 </li>
             </ul>
-            <div class="search">
-                <i class="iconfont icon-search"></i>
+            <div class="search" flex>
+                <i i-carbon-search h-8 w-5>search</i>
                 <input type="text" placeholder="搜一搜">
             </div>
             <!-- 头部购物车 -->
