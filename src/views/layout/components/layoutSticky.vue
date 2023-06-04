@@ -1,9 +1,11 @@
 <script setup>
-
+import { useScroll } from '@vueuse/core'
+const {  y } = useScroll(window)
 </script>
 
 <template>
     <div class="app-header-sticky show">
+        {{ y }}
         <div class="container">
             <RouterLink class="logo" to="/" />
             <!-- 导航区域 -->
