@@ -4,12 +4,12 @@
 <template>
 <!-- 一级路由出口组件 -->
 <RouterView />
-<div class="test">
+<!-- <div class="test">
     test scss
 </div>
 <button bg-red w-100 ml-10 m-1>
     我是个按钮
-</button>
+</button> -->
 <div class="i-carbon-logo-wechat text-3xl bg-green-500" />
 </template>
 

@@ -5,13 +5,13 @@
             <div class="container">
                 <dl>
                     <dt>客户服务</dt>
-                    <dd><i class="iconfont icon-kefu"></i> 在线客服</dd>
-                    <dd><i class="iconfont icon-question"></i> 问题反馈</dd>
+                    <dd><div i-ri-customer-service-2-fill w-25 h-14 hover:bg-blue/> 在线客服</dd>
+                    <dd><div i-carbon-help-desk w-25 h-14 hover:bg-yellow/> 问题反馈</dd>
                 </dl>
                 <dl>
                     <dt>关注我们</dt>
-                    <dd><i class="iconfont icon-weixin"></i> 公众号</dd>
-                    <dd><i class="iconfont icon-weibo"></i> 微博</dd>
+                    <dd><div i-carbon-logo-wechat w-25 h-14 hover:bg-green-500 /> 公众号</dd>
+                    <dd><div i-ri-weibo-fill w-25 h-14 hover:bg-red-500/> 微博</dd>
                 </dl>
                 <dl>
                     <dt>下载APP</dt>
