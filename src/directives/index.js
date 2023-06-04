@@ -8,12 +8,14 @@ export const lazyPlugin = {
                 //el: 指令所绑定的元素，可以用来直接操作 DOM 。
                 //binding: 一个对象
                 console.log(el, binding.value)
-                useIntersectionObserver(
+                // 在监听的图片第一次完成加载之后停止监听
+                const { stop } = useIntersectionObserver(
                     el,
                     ([{ isIntersecting }]) => {
                         console.log(isIntersecting)
                         if (isIntersecting) {
                             el.src = binding.value
+                            stop()
                         }
                     }
                 )
