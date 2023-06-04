@@ -14,7 +14,8 @@ onMounted(()=>getHotList())
         <ul class="goods-list">
             <li v-for="item in hotList" :key="item.id">
                 <RouterLink to="/">
-                    <img :src="item.picture" alt="">
+                    <!-- 只有在正式进入到视口区域（vueUse）才会发送图片网络请求 -->
+                    <img v-img-lazy="item.picture" alt="">
                     <p class="name">{{ item.title }}</p>
                     <p class="desc">{{ item.alt }}</p>
                 </RouterLink>
