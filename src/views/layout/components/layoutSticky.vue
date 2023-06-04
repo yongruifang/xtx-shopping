@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="app-header-sticky">
+    <div class="app-header-sticky show">
         <div class="container">
             <RouterLink class="logo" to="/" />
             <!-- 导航区域 -->
