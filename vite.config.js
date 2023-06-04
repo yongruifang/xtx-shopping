@@ -26,6 +26,10 @@ export default defineConfig({
             presetUno(),
             presetAttributify(),
             presetIcons()],
+        rules: [
+            //覆盖m-1的样式，使其为1px
+            ['m-1' , {margin:'1px'}],  
+        ],
     }),
   ],
   resolve: {
