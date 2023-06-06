@@ -2,6 +2,7 @@
 //表单校验 (账户名+密码)
 
 import { ref } from 'vue';
+import { loginAPI } from '@/apis/user'
 
 //1. 准备表单对象
 const form = ref({
@@ -46,12 +47,13 @@ const rules = {
 // 3. 获取form实例做统一校验
 const formRef = ref(null)
 const doLogin = () => {
+    const {account , password} = form.value
     // 调用实例方法
-    formRef.value.validate((valid) => {
+    formRef.value.validate(async (valid) => {
         //valid: 所有表单都通过校验 true
         console.log(valid)
         if (valid) {
-            //TODO LOGIN
+            const res = await loginAPI({account , password})
         }
     })
 }
