@@ -30,10 +30,16 @@ export const useCartStore = defineStore('cart', () => {
         const item = cartList.value.find((item) => skuId === item.skuId)
         item.selected = selected
     }
+    // 全选功能
+    const checkAll = (selected) => { 
+        cartList.value.forEach((item) => (item.selected = selected))
+    }
     // 统计购物车商品count之和
     const total = computed(() => cartList.value.reduce((prev, cur) => prev + cur.count, 0))
     // 统计购物车商品总价
     const totalPrice = computed(() => cartList.value.reduce((prev, cur) => prev + cur.count * cur.price, 0))
+    // 是否全选
+    const isCheckAll = computed(() => cartList.value.every((item) => item.selected))
     return {
         cartList,
         total,
@@ -41,6 +47,8 @@ export const useCartStore = defineStore('cart', () => {
         addCart,
         delCart,
         singleCheck,
+        checkAll,
+        isCheckAll,
     }
 }, {
     persist: true,
