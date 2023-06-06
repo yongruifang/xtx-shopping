@@ -2,7 +2,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { useUserStore } from './user'
-import {insertCartAPI, findNewCartListAPI} from '@/apis/cart.js'
+import {insertCartAPI, findNewCartListAPI, delCartAPI} from '@/apis/cart.js'
 
 export const useCartStore = defineStore('cart', () => {
     const userStore = useUserStore()
@@ -31,11 +31,17 @@ export const useCartStore = defineStore('cart', () => {
             }            
         }
     }
-    const delCart = (skuId) => {
-        const index = cartList.value.findIndex((item) => skuId === item.skuId)
-        if (index > -1) {
-            cartList.value.splice(index, 1)
+    const delCart = async (skuId) => {
+        if (isLogin) {
+            await delCartAPI([skuId])
+            // 获取最新的购物车列表
+            const res = await findNewCartListAPI()
+            cartList.value = res.result
+        } else {
+            const index = cartList.value.findIndex((item) => skuId === item.skuId)
+            cartList.value.splice(index, 1)     
         }
+
     }
     // 单选功能
     const singleCheck = (skuId, selected) => {
