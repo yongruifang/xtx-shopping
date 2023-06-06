@@ -1,15 +1,20 @@
 <script setup>
 import { getCategoryAPI } from '@/apis/category'
 import { ref,onMounted } from 'vue'
-import {useRoute} from 'vue-router'
+import {useRoute, onBeforeRouteUpdate} from 'vue-router'
 //获取数据
 const categoryData = ref({})
 const route = useRoute()
-const getCategory = async () => {
-    const { result } = await getCategoryAPI(route.params.id)
+const getCategory = async (id = route.params.id) => {
+    const { result } = await getCategoryAPI(id)
     categoryData.value = result
+    console.log(result)
 }
-onMounted(()=>getCategory())
+onMounted(() => getCategory())
+onBeforeRouteUpdate((to) => {
+    console.log(to)
+    getCategory(to.params.id)
+})
 </script>
 
 <template>
