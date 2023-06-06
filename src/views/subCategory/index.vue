@@ -35,8 +35,12 @@ const tabChange = () => {
     getGoodList()
 }
 // 加载更多
-const load = () => {
-    console.log('触底')
+const load = async () => {
+    // 获取下一页的数据
+    reqData.value.page++
+    const res = await getSubCategoryAPI(reqData.value)
+    // 将下一页的数据添加到列表中
+    goodList.value = [...goodList.value, ...res.result.items]
 }
 </script>
 
