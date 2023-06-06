@@ -38,7 +38,7 @@ const totalPrice = computed(() => {
               <p class="count">x{{ i.count }}</p>
             </div>
               </RouterLink>
-              <i class="iconfont icon-close-new" @click="store.delCart(i.skuId)"></i>
+              <i class="i-carbon-close" @click="cartStore.delCart(i.skuId)">delete</i>
             </div>
            
             </div>
