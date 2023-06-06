@@ -34,6 +34,10 @@ const tabChange = () => {
     reqData.value.page = 1
     getGoodList()
 }
+// 加载更多
+const load = () => {
+    console.log('触底')
+}
 </script>
 
 <template>
@@ -53,7 +57,7 @@ const tabChange = () => {
                 <el-tab-pane label="最高人气" name="orderNum"></el-tab-pane>
                 <el-tab-pane label="评论最多" name="evaluateNum"></el-tab-pane>
             </el-tabs>
-            <div class="body">
+            <div class="body" v-infinite-scroll="load">
                 <!-- 商品列表-->
                 <goodsItem v-for="goods in goodList" :goods="goods" :key="goods.id"></goodsItem>
             </div>
