@@ -23,16 +23,16 @@ const router = createRouter({
         {
             path: 'category/sub/:id',
             component: subCategory  
-        }
+        },
+        {
+            path: '/detail/:id',
+            component: detail
+        },
       ]
     },
     {
       path: '/login',
       component: login
-    },
-    {
-      path: '/detail/:id',
-      component: detail
     },
     ],
   //路由滚动行为定制
