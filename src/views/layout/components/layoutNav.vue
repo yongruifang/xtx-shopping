@@ -1,5 +1,6 @@
 <script setup>
-
+import {useUserStore} from '@/stores/user'
+const userStore = useUserStore()
 </script>
 
 <template>
@@ -7,9 +8,11 @@
         <div class="container">
             <ul>
                 <!-- 多模板渲染，区分登录状态和非登录状态 -->
-                <template v-if="false">
+
+                <!-- 适配思路：登录true，离线false （是否有token）-->
+                <template v-if="userStore.userInfo.token">
                     <li style="display: flex;">
-                    <a href="javascript:;"><i i-carbon-user-avatar>hello</i>周杰伦</a>
+                    <a href="javascript:;"><i i-carbon-user-avatar>hello</i>{{userStore.userInfo.account}}</a>
                     </li>
                     <li>
                         <el-popconfirm title="确认退出吗?" confirm-button-text="确认" cancel-button-text="取消">

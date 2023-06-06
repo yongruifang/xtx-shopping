@@ -2,7 +2,7 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import { loginAPI } from '@/apis/user'
 
-export const userUserStore = defineStore('user', () => {
+export const useUserStore = defineStore('user', () => {
     //1. 定义管理用户数据的state
     const userInfo = ref({})
     //2. 定义获取接口数据的action函数

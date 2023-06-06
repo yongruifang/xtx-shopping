@@ -2,7 +2,7 @@
 //表单校验 (账户名+密码)
 
 import { ref } from 'vue';
-import { userUserStore } from '@/stores/user';
+import { useUserStore } from '@/stores/user';
 import { ElMessage } from 'element-plus'
 import 'element-plus/theme-chalk/el-message.css'
 import { useRouter } from 'vue-router'
@@ -50,7 +50,7 @@ const rules = {
 // 3. 获取form实例做统一校验
 const formRef = ref(null)
 const router = useRouter()
-const userStore = userUserStore()
+const userStore = useUserStore()
 const doLogin = () => {
     const {account , password} = form.value
     // 调用实例方法
