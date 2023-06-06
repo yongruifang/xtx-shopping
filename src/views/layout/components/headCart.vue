@@ -1,19 +1,6 @@
 <script setup>
 import { useCartStore } from '@/stores/cartStore'
-import { computed } from 'vue'
 const cartStore = useCartStore()
-// 统计购物车商品count之和
-const total = computed(() => {
-    return cartStore.cartList.reduce((prev, cur) => {
-        return prev + cur.count
-    }, 0)
-})
-// 统计购物车商品总价
-const totalPrice = computed(() => {
-    return cartStore.cartList.reduce((prev, cur) => {
-        return prev + cur.count * cur.price
-    }, 0)
-})
 </script>
 
 <template>
@@ -44,8 +31,8 @@ const totalPrice = computed(() => {
             </div>
             <div class="foot">
                 <div class="total">
-                    <p>共 {{ total }} 件商品</p>
-                    <p>&yen; {{ totalPrice }} </p>
+                    <p>共 {{ cartStore.total }} 件商品</p>
+                    <p>&yen; {{ cartStore.totalPrice }} </p>
                 </div>
                 <el-button size="large" type="primary">去购物车结算</el-button>
             </div>
