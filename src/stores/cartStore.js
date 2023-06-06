@@ -24,6 +24,12 @@ export const useCartStore = defineStore('cart', () => {
             cartList.value.splice(index, 1)
         }
     }
+    // 单选功能
+    const singleCheck = (skuId, selected) => {
+        // 通过skuId找到对应的商品， 然后把它的selected属性修改
+        const item = cartList.value.find((item) => skuId === item.skuId)
+        item.selected = selected
+    }
     // 统计购物车商品count之和
     const total = computed(() => cartList.value.reduce((prev, cur) => prev + cur.count, 0))
     // 统计购物车商品总价
@@ -33,7 +39,8 @@ export const useCartStore = defineStore('cart', () => {
         total,
         totalPrice,
         addCart,
-        delCart
+        delCart,
+        singleCheck,
     }
 }, {
     persist: true,
