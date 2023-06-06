@@ -1,5 +1,5 @@
 <script setup>
-import { getBannerAPI } from '@/apis/home'
+import { useBanner } from './composables/useBanner'
 import { getCategoryAPI } from '@/apis/category'
 import { ref,onMounted } from 'vue'
 import { useRoute, onBeforeRouteUpdate } from 'vue-router'
@@ -10,21 +10,12 @@ const route = useRoute()
 const getCategory = async (id = route.params.id) => {
     const { result } = await getCategoryAPI(id)
     categoryData.value = result
-    console.log(result)
 }
-const bannerList = ref([])
-const getBanner = async () => {
-    const res = await getBannerAPI({
-        distributionSite: '2'
-    })
-    bannerList.value = res.result
-}
+const { bannerList } = useBanner()
 onMounted(() => { 
-    getBanner()
     getCategory()
 })
 onBeforeRouteUpdate((to) => {
-    console.log(to)
     getCategory(to.params.id)
 })
 </script>
