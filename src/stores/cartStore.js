@@ -40,6 +40,10 @@ export const useCartStore = defineStore('cart', () => {
     const totalPrice = computed(() => cartList.value.reduce((prev, cur) => prev + cur.count * cur.price, 0))
     // 是否全选
     const isCheckAll = computed(() => cartList.value.every((item) => item.selected))
+    // 统计选中商品的数量
+    const selectedTotal = computed(() => cartList.value.filter((item) => item.selected).reduce((prev, cur) => prev + cur.count, 0))
+    // 统计选中商品的总价
+    const selectedTotalPrice = computed(() => cartList.value.filter((item) => item.selected).reduce((prev, cur) => prev + cur.count * cur.price, 0))
     return {
         cartList,
         total,
@@ -49,6 +53,8 @@ export const useCartStore = defineStore('cart', () => {
         singleCheck,
         checkAll,
         isCheckAll,
+        selectedTotal,
+        selectedTotalPrice
     }
 }, {
     persist: true,
