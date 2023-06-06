@@ -4,9 +4,14 @@
  * @return {*}
  */
 import httpInstance from '@/utils/http'
-export function getBannerAPI() {
+export function getBannerAPI(params = {}) {
+    // 默认
+    const {distributionSite = '1'} = params
     return httpInstance({
-        url: 'home/banner'
+        url: 'home/banner',
+        params: {
+            distributionSite
+        }
     })
 }
 export function getNewAPI() {
