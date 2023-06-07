@@ -1,35 +1,16 @@
 # vue3-rabbit
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
+```shell
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
 npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
 npm run lint
 ```
+
+# 项目概述
+本项目是在学习黑马程序员的前端Vue3小兔鲜电商项目时Follow的练习记录。
+视频地址：[黑马程序员前端Vue3小兔鲜电商项目实战，vue3全家桶从入门到实战电商项目一套通关](https://www.bilibili.com/video/BV1Ac411K7EQ?p=100&vd_source=dbb1a9a13226de4ae0ca4dd2307595f4)
+项目接口文档：[在线文档](https://www.apifox.cn/apidoc/shared-c05cb8d7-e591-4d9c-aff8-11065a0ec1de/api-67132167)
+教程笔记：[Vue3小兔鲜新版（B站）](https://www.yuque.com/fechaichai/td99ck)
+# 注意
+- 对于图标Icon，原项目使用阿里的IconFont, 本项目用UnocssIcon替代
