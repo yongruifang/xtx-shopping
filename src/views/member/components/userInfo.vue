@@ -1,5 +1,6 @@
 <script setup>
-const userStore = {}
+import { useUserStore } from '@/stores/user'
+const userStore = useUserStore()
 </script>
 
 <template>
@@ -13,15 +14,15 @@ const userStore = {}
         </div>
         <div class="item">
             <a href="javascript:;">
-                <span class="iconfont icon-hy"></span>
+                <span i-ri-vip-diamond-fill color-yellow-300:70>vip</span>
                 <p>会员中心</p>
             </a>
             <a href="javascript:;">
-                <span class="iconfont icon-aq"></span>
+                <span i-ri-settings-4-fill color-yellow-300:70>setting</span>
                 <p>安全设置</p>
             </a>
             <a href="javascript:;">
-                <span class="iconfont icon-dw"></span>
+                <span i-ri-map-pin-fill color-yellow-300:70>address</span>
                 <p>地址管理</p>
             </a>
         </div>
