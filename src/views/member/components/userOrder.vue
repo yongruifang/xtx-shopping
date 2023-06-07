@@ -29,6 +29,17 @@ const tabChange = (tab) => {
     params.value.orderState = tab
     getOrderList()
 }
+const formatPayState = (payState) => {
+    const stateMap = {
+        1: '待付款',
+        2: '待发货',
+        3: '待收货',
+        4: '待评价',
+        5: '已完成',
+        6: '已取消'
+    }
+    return stateMap[payState]
+}
 </script>
 
 <template>
@@ -73,8 +84,9 @@ const tabChange = (tab) => {
                                     </li>
                                 </ul>
                             </div>
+                            <!-- 订单状态 -->
                             <div class="column state">
-                                <p>{{ order.orderState }}</p>
+                                <p>{{ formatPayState(order.orderState) }}</p>
                                 <p v-if="order.orderState === 3">
                                     <a href="javascript:;" class="green">查看物流</a>
                                 </p>
