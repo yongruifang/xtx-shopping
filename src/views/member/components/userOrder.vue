@@ -18,9 +18,13 @@ const params = ref({
     page: 1,
     pageSize: 2
 })
+
+const total = ref(0)
+
 const getOrderList = async () => {
     const res = await getUserOrder(params.value)
     orderList.value = res.result.items
+    total.value = res.result.counts
 }   
 onMounted(() => getOrderList())
 
@@ -39,6 +43,11 @@ const formatPayState = (payState) => {
         6: '已取消'
     }
     return stateMap[payState]
+}
+// 页数切换
+const pageChange = (page) => {
+    params.value.page = page
+    getOrderList()
 }
 </script>
 
@@ -122,7 +131,7 @@ const formatPayState = (payState) => {
                     </div>
                     <!-- 分页 -->
                     <div class="pagination-container">
-                        <el-pagination background layout="prev, pager, next" :total="50"/>
+                        <el-pagination background layout="prev, pager, next" :total="total" :page-size="params.pageSize" @current-change="pageChange"/>
                     </div>
                 </div>
             </div>
