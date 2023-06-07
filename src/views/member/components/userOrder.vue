@@ -22,12 +22,18 @@ const getOrderList = async () => {
     const res = await getUserOrder(params.value)
     orderList.value = res.result.items
 }   
-onMounted(()=>getOrderList())
+onMounted(() => getOrderList())
+
+// tab切换
+const tabChange = (tab) => {
+    params.value.orderState = tab
+    getOrderList()
+}
 </script>
 
 <template>
     <div class="order-container">
-        <el-tabs>
+        <el-tabs @tab-change="tabChange">
             <!-- tab切换 -->
             <el-tab-pane v-for="item in tabTypes" :key="item.name" :label="item.label" />
 
@@ -104,7 +110,7 @@ onMounted(()=>getOrderList())
                     </div>
                     <!-- 分页 -->
                     <div class="pagination-container">
-                        <el-pagination background layout="prev, pager, next" />
+                        <el-pagination background layout="prev, pager, next" :total="50"/>
                     </div>
                 </div>
             </div>
