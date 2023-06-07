@@ -8,7 +8,7 @@ const payInfo = {}
         <div class="container">
             <!-- 付款信息 -->
             <div class="pay-info">
-                <span class="icon iconfont icon-queren2"></span>
+                <i i-carbon-checkmark-outline w-12 h-12 color-green>tick</i>
                 <div class="tip">
                     <p>订单提交成功！请尽快完成支付。</p>
                     <p>支付还剩 <span>24分30秒</span>, 超时后将取消订单</p>
