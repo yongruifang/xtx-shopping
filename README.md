@@ -14,3 +14,6 @@ npm run lint
 教程笔记：[Vue3小兔鲜新版（B站）](https://www.yuque.com/fechaichai/td99ck)<br/>
 # 注意
 - 对于图标Icon，原项目使用阿里的IconFont, 本项目用UnocssIcon替代
+
+# 部署
+预览：
