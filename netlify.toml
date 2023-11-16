@@ -1,6 +1,0 @@
-[build]
-  ignore = """\
-    [ $(git rev-parse --abbrev-ref HEAD) = master ] \
-      || git diff --quiet master HEAD \
-        README.md \
-  """
