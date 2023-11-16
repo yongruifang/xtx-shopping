@@ -3,10 +3,10 @@ import axios from 'axios'
 import { ElMessage } from 'element-plus'
 import 'element-plus/theme-chalk/el-message.css'
 import { useUserStore } from '@/stores/user'
-import  router from '@/router'
+import router from '@/router'
 
 const httpInstance = axios.create({
-    baseURL: 'http://pcapi-xiaotuxian-front-devtest.itheima.net',
+    baseURL: 'https://pcapi-xiaotuxian-front-devtest.itheima.net',
     timeout: 5000,
 })
 
@@ -20,8 +20,8 @@ httpInstance.interceptors.request.use(config => {
         config.headers.Authorization = `Bearer ${token}`
     }
     return config
-  }, e => Promise.reject(e))
-  
+}, e => Promise.reject(e))
+
 // axios响应式拦截器
 httpInstance.interceptors.response.use(res => res.data, e => {
     // 统一错误提示
