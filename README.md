@@ -16,5 +16,5 @@ npm run lint
 - 对于图标Icon，原项目使用阿里的IconFont, 本项目用UnocssIcon替代
 
 # 部署
-预览(注意不要开代理,否则无法与后台API交互)：[https://inspiring-sprite-f6f371.netlify.app/](https://inspiring-sprite-f6f371.netlify.app/)
+[vue-rabbit-shop.netlify.app](https://vue-rabbit-shop.netlify.app/)
 ![image](https://github.com/yongruifang/xtx-shopping/assets/79357382/27317fe6-3843-40fa-b08a-89032ffb74b9)
